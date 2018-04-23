@@ -2,3 +2,10 @@
 
 # Mac
 .DS_Store
+
+#plugin directory for nvim
+config/nvim/plugged
+
+zsh/themes
+tmux/themes
+fonts/

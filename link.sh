@@ -1,7 +1,7 @@
 # Copied from https://github.com/nicknisi/dotfiles
 #!/usr/bin/env bash
 
-DOTFILES=$PWD
+DOTFILES=~/.dotfiles
 
 echo -e "\\nCreating symlinks"
 echo "=============================="
@@ -22,6 +22,17 @@ if [ ! -d "$HOME/.config" ]; then
     echo "Creating ~/.config"
     mkdir -p "$HOME/.config"
 fi
+
+zshThemeFiles=$( find "$DOTFILES/zsh/themes" -d 1 2>/dev/null )
+for themes in $zshThemeFiles; do
+    target="$HOME/.oh-my-zsh/custom/themes/$( basename "$themes" )"
+    if [ -e "$target" ]; then
+        echo "~${target#$HOME} already exists... Skipping."
+    else
+        echo "Creating symlink for $themes"
+        ln -s "$themes" "$target"
+    fi
+done
 
 config_files=$( find "$DOTFILES/config" -d 1 2>/dev/null )
 for config in $config_files; do

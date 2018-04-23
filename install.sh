@@ -5,8 +5,8 @@ command_exists() {
 }
 
 echo "Installing dotfiles."
+git submodule update --init --recursive
 
-source link.sh
 
 if ! command_exists zsh; then
     echo "zsh not found. Please install and then re-run installation scripts"
@@ -15,5 +15,9 @@ elif ! [[ $SHELL =~ .*zsh.* ]]; then
     echo "Configuring zsh as default shell"
     chsh -s "$(which zsh)"
 fi
+
+source link.sh
+
+source fonts/fonts/install.sh
 
 echo "Done. Reload your terminal."
