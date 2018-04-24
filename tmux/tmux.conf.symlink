@@ -1,6 +1,12 @@
-source-file "${HOME}/.dotfiles/tmux/themes/tmux-themepack/powerline/block/green.tmuxtheme"
-
 set -g default-terminal "xterm"
+
+set -sg escape-time 0
+
+# pane movement shortcuts
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 # THEME
 set -g status-bg black

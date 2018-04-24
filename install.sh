@@ -7,6 +7,7 @@ command_exists() {
 echo "Installing dotfiles."
 git submodule update --init --recursive
 
+sudo npm i -g eslint-cli
 
 if ! command_exists zsh; then
     echo "zsh not found. Please install and then re-run installation scripts"

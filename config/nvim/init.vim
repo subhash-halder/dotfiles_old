@@ -10,7 +10,9 @@ Plug 'vim-airline/vim-airline-themes'
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'vim-syntastic/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'neomake/neomake'
+"Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
 " Initialize plugin system
 call plug#end()
@@ -44,6 +46,14 @@ let g:enable_italic_font = 1
 let g:airline_theme = "hybrid"
 let g:airline_powerline_fonts = 1
 
+" Start autocompletion after 4 chars
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" Don't show YCM's preview window 
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+
 set background=dark
 colorscheme hybrid_material
 
@@ -52,17 +62,18 @@ set timeoutlen=1000 ttimeoutlen=0
 set nowrap           "no line wrapping
 set laststatus=2 " show the satus line all the time
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 " eslint configuration
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-
+"let g:syntastic_always_populate_loc_list = 0 
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:neomake_javascript_enabled_makers = ['eslint']
+call neomake#configure#automake('rw', 1000)
 " Tab control
 set noexpandtab " tabs ftw
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
