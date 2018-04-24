@@ -7,6 +7,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'cloudhead/neovim-fuzzy'
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
@@ -27,6 +28,9 @@ let NEDTreeDirArrows=1
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+
+nmap <C-p> :FuzzyOpen<cr>
+nmap <C-s> :w<cr>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
