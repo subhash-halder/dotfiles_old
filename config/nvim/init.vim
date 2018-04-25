@@ -7,12 +7,14 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 Plug 'cloudhead/neovim-fuzzy'
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'neomake/neomake'
+Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
 " Initialize plugin system
@@ -31,6 +33,20 @@ nmap <silent> <leader>y :NERDTreeFind<cr>
 
 nmap <C-p> :FuzzyOpen<cr>
 nmap <C-s> :w<cr>
+imap <C-s> <C-o>:w<cr>
+
+map <leader>ev :e! ~/.config/nvim/init.vim<cr>
+
+" Strict mode to make vim habit better
+nnoremap <Left> :echo "No left for you!"<CR>
+nnoremap <Right> :echo "No Right for you!"<CR>
+nnoremap <Up> :echo "No Up for you!"<CR>
+nnoremap <Down> :echo "No Down for you!"<CR>
+
+inoremap <Left> <C-o>:echo "No left for you!"<CR>
+inoremap <Right> <C-o>:echo "No Right for you!"<CR>
+inoremap <Up> <C-o>:echo "No Up for you!"<CR>
+inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -41,7 +57,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Deleted"   : "✖",
     \ "Dirty"     : "✗",
     \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
+    \ "Ignored"   : '☒',
     \ "Unknown"   : "?"
     \ }
 let g:NERDTreeIgnore=['.git', '.swp', '.DS_Store', '\~$']
@@ -49,6 +65,7 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:airline_theme = "hybrid"
 let g:airline_powerline_fonts = 1
+let g:indentLine_char = '┆'
 
 " Start autocompletion after 4 chars
 let g:ycm_min_num_of_chars_for_completion = 4
@@ -79,13 +96,13 @@ set laststatus=2 " show the satus line all the time
 let g:neomake_javascript_enabled_makers = ['eslint']
 call neomake#configure#automake('rw', 1000)
 " Tab control
-set noexpandtab " tabs ftw
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " edit as if the tabs are 4 characters wide
-set shiftwidth=4 " number of spaces to use for indent and unindent
-set shiftround " round indent to a multiple of 'shiftwidth'
-
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 set clipboard=unnamed
 
 "Setting relative line numbering
