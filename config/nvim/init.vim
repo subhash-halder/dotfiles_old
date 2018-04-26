@@ -20,6 +20,8 @@ Plug 'tpope/vim-fugitive' " the ultimate git helper
 " Initialize plugin system
 call plug#end()
 let g:spacevim_enable_guicolors=0
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
 let mapleader = ','
 "NerdTree config
@@ -48,6 +50,13 @@ inoremap <Right> <C-o>:echo "No Right for you!"<CR>
 inoremap <Up> <C-o>:echo "No Up for you!"<CR>
 inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 
+" Using tab shortcut
+nnoremap tn :tabnew<CR>
+nnoremap tk :tablast<CR>
+nnoremap tj :tabfirst<CR>
+nnoremap th :tabprev<CR>
+nnoremap tl :tabnext<CR>
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -60,6 +69,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Ignored"   : '☒',
     \ "Unknown"   : "?"
     \ }
+" let NERDTreeMapOpenInTab='<ENTER>'
+let NERDTreeQuitOnOpen=1
 let g:NERDTreeIgnore=['.git', '.swp', '.DS_Store', '\~$']
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -67,9 +78,9 @@ let g:airline_theme = "hybrid"
 let g:airline_powerline_fonts = 1
 let g:indentLine_char = '┆'
 
-" Start autocompletion after 4 chars
-let g:ycm_min_num_of_chars_for_completion = 4
-let g:ycm_min_num_identifier_candidate_chars = 4
+" Start autocompletion after 2 chars
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_enable_diagnostic_highlighting = 0
 " Don't show YCM's preview window 
 set completeopt-=preview
