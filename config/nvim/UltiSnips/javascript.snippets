@@ -1,0 +1,23 @@
+snippet jutest "Unit test snippet"
+/* global  describe, it */
+/* eslint-disable no-unused-expressions */
+// Require the dev-dependencies
+const chai = require('chai');
+const $1 = require('$2');
+const { expect } = chai;
+
+
+// Our parent block
+
+describe('$3', () => {
+    it('$4', (done) => {
+        done();
+    });
+});
+endsnippet
+
+snippet /* "JsDocs comments"
+/**
+ * $1
+ */
+endsnippet

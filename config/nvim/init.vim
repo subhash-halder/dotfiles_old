@@ -12,16 +12,23 @@ Plug 'cloudhead/neovim-fuzzy'
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
+" Json file to show the quotes
+let g:vim_json_syntax_conceal=0
+" Reads when file changes
+set autoread 
 " Initialize plugin system
 call plug#end()
 let g:spacevim_enable_guicolors=0
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#formatter='unique_tail'
+"let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
 let mapleader = ','
 "NerdTree config
@@ -32,6 +39,15 @@ let NEDTreeDirArrows=1
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" make YCM compatible with UltiSnips 
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_key_list_previous_completion = ['<C-p>']
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 nmap <C-p> :FuzzyOpen<cr>
 nmap <C-s> :w<cr>
@@ -56,6 +72,7 @@ nnoremap tk :tablast<CR>
 nnoremap tj :tabfirst<CR>
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
+nnoremap tx :bdelete<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
