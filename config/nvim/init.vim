@@ -21,7 +21,7 @@ Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
 " Json file to show the quotes
-let g:vim_json_syntax_conceal=0
+let g:vim_json_syntax_conceal = 0
 " Reads when file changes
 set autoread 
 " Initialize plugin system
