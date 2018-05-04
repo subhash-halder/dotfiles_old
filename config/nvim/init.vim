@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -31,14 +31,15 @@ let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
 let mapleader = ','
+nmap <silent> <leader>k :Explore<cr>
 "NerdTree config
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
-let NEDTreeDirArrows=1
+" let NERDTreeShowHidden=1
+" let NERDTreeMinimalUI=1
+" let NEDTreeDirArrows=1
 " Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
+" nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
+" nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " make YCM compatible with UltiSnips 
 let g:ycm_key_list_select_completion = ['<C-n>']
@@ -74,21 +75,21 @@ nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 nnoremap tx :bdelete<CR>
 
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Ignored"   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ "Ignored"   : '☒',
+"     \ "Unknown"   : "?"
+"     \ }
 " let NERDTreeMapOpenInTab='<ENTER>'
-let NERDTreeQuitOnOpen=1
-let g:NERDTreeIgnore=['.git', '.swp', '.DS_Store', '\~$']
+" let NERDTreeQuitOnOpen=1
+" let g:NERDTreeIgnore=['.git$[[dir]]', '.swp', '.DS_Store', '\~$']
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:airline_theme = "hybrid"
@@ -122,7 +123,7 @@ set laststatus=2 " show the satus line all the time
 "let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 let g:neomake_javascript_enabled_makers = ['eslint']
-call neomake#configure#automake('rw', 1000)
+call neomake#configure#automake('nrwi', 500)
 " Tab control
 filetype plugin indent on
 " show existing tab with 4 spaces width
