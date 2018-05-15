@@ -3,7 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -31,15 +31,16 @@ let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
 let mapleader = ','
-nmap <silent> <leader>k :Explore<cr>
-"NerdTree config
-" let NERDTreeShowHidden=1
-" let NERDTreeMinimalUI=1
-" let NEDTreeDirArrows=1
+imap jj <ESC>
+" nmap <silent> <leader>k :Explore<cr>
+" NerdTree config
+ let NERDTreeShowHidden=1
+ let NERDTreeMinimalUI=1
+ let NEDTreeDirArrows=1
 " Toggle NERDTree
-" nmap <silent> <leader>k :NERDTreeToggle<cr>
+ nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
-" nmap <silent> <leader>y :NERDTreeFind<cr>
+ nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " make YCM compatible with UltiSnips 
 let g:ycm_key_list_select_completion = ['<C-n>']
