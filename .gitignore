@@ -6,6 +6,6 @@
 #plugin directory for nvim
 config/nvim/plugged
 
-zsh/themes
-tmux/themes
-fonts/
+#zsh/themes
+#tmux/themes
+#fonts/

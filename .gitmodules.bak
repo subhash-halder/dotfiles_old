@@ -1,9 +1,9 @@
+[submodule "zsh/themes/powerlevel9k"]
+	path = zsh/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "fonts/fonts"]
 	path = fonts/fonts
 	url = https://github.com/powerline/fonts.git
 [submodule "tmux/themes/tmux-themepack"]
 	path = tmux/themes/tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
-[submodule "zsh/themes/powerlevel9k"]
-	path = zsh/themes/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git

@@ -23,8 +23,26 @@ if [ ! -d "$HOME/.config" ]; then
     mkdir -p "$HOME/.config"
 fi
 
-zshThemeFiles=$( find "$DOTFILES/zsh/themes" -d 1 2>/dev/null )
+
+config_files=$( find -H "$DOTFILES/config" -maxdepth 1 2>/dev/null )
+for config in $config_files; do
+    baseName=basename "$config"
+    target="$HOME/.config/$baseName"
+    if [ -e "$target" ]; then
+        echo "~${target#$HOME} already exists... Skipping."
+    else
+        echo "Creating symlink for $config"
+        ln -s "$config" "$target"
+    fi
+done
+
+echo -e "\\n\\ninstalling zsh themes"
+echo "=============================="
+
+zshThemeFiles=$( find -H ~/.dotfiles/zsh/themes -maxdepth 1 2>/dev/null )
+echo "$zshThemeFiles"
 for themes in $zshThemeFiles; do
+    echo "&themes"
     target="$HOME/.oh-my-zsh/custom/themes/$( basename "$themes" )"
     if [ -e "$target" ]; then
         echo "~${target#$HOME} already exists... Skipping."
@@ -34,16 +52,6 @@ for themes in $zshThemeFiles; do
     fi
 done
 
-config_files=$( find "$DOTFILES/config" -d 1 2>/dev/null )
-for config in $config_files; do
-    target="$HOME/.config/$( basename "$config" )"
-    if [ -e "$target" ]; then
-        echo "~${target#$HOME} already exists... Skipping."
-    else
-        echo "Creating symlink for $config"
-        ln -s "$config" "$target"
-    fi
-done
 
 # create vim symlinks
 # As I have moved off of vim as my full time editor in favor of neovim,
