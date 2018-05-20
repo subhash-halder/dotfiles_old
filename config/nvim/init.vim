@@ -15,6 +15,7 @@ Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
+Plug 'ruanyl/vim-fixmyjs'
 "Plug 'honza/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'jaawerth/neomake-local-eslint-first'
@@ -76,21 +77,21 @@ nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 nnoremap tx :bdelete<CR>
 
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "✹",
-"     \ "Staged"    : "✚",
-"     \ "Untracked" : "✭",
-"     \ "Renamed"   : "➜",
-"     \ "Unmerged"  : "═",
-"     \ "Deleted"   : "✖",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ "Ignored"   : '☒',
-"     \ "Unknown"   : "?"
-"     \ }
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Ignored"   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 " let NERDTreeMapOpenInTab='<ENTER>'
 " let NERDTreeQuitOnOpen=1
-" let g:NERDTreeIgnore=['.git$[[dir]]', '.swp', '.DS_Store', '\~$']
+let g:NERDTreeIgnore=['.git$[[dir]]', '.swp', '.DS_Store', '\~$']
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:airline_theme = "hybrid"
