@@ -4,7 +4,9 @@ call plug#begin('~/.config/nvim/plugged')
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'kristijanhusak/vim-hybrid-material'
+"Plug 'kristijanhusak/vim-hybrid-material'
+"Plug 'kadekillary/subtle_solo'
+Plug 'aradunovic/perun.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
@@ -16,7 +18,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'ruanyl/vim-fixmyjs'
-"Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
@@ -70,12 +72,9 @@ inoremap <Up> <C-o>:echo "No Up for you!"<CR>
 inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 
 " Using tab shortcut
-nnoremap tn :tabnew<CR>
-nnoremap tk :tablast<CR>
-nnoremap tj :tabfirst<CR>
-nnoremap th :tabprev<CR>
-nnoremap tl :tabnext<CR>
-nnoremap tx :bdelete<CR>
+nnoremap <C-k> :bnext<CR>
+nnoremap <C-j> :bprevious<CR>
+nnoremap <C-x> :bdelete<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -90,7 +89,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 " let NERDTreeMapOpenInTab='<ENTER>'
-" let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1
 let g:NERDTreeIgnore=['.git$[[dir]]', '.swp', '.DS_Store', '\~$']
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
@@ -106,8 +105,11 @@ let g:ycm_enable_diagnostic_highlighting = 0
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 
-set background=dark
-colorscheme hybrid_material
+"set background=dark
+"colorscheme hybrid_material
+"colorscheme subtle_dark
+colorscheme perun
+set termguicolors
 
 set cursorline       "hilight the line of the cursor
 set timeoutlen=1000 ttimeoutlen=0
