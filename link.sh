@@ -63,7 +63,8 @@ done
 echo -e "\\n\\nCreating vim symlinks"
 echo "=============================="
 VIMFILES=( "$HOME/.vim:$DOTFILES/config/nvim"
-        "$HOME/.vimrc:$DOTFILES/config/nvim/init.vim" )
+        "$HOME/.vimrc:$DOTFILES/config/nvim/init.vim"
+        "$HOME/.tmux:$DOTFILES/tmux" )
 
 for file in "${VIMFILES[@]}"; do
     KEY=${file%%:*}

@@ -6,6 +6,10 @@
 #plugin directory for nvim
 config/nvim/plugged
 
+tmux/plugins
+tmux/resurrect
+
+
 .netrwhist
 
 #zsh/themes

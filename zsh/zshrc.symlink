@@ -92,3 +92,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias zshconfig="nvim ~/.dotfiles/zsh/zshrc.symlink"
+alias tmuxconfig="nvim ~/.dotfiles/tmux/tmux.conf.symlink"
+alias nvimconfig="nvim ~/.dotfiles/config/nvim/init.vim"
+
+function tmx() {
+    tmux new-session \; \
+    split-window -v \; \
+    split-window -h \; \
+    select-pane -t 0 \; \
+    split-window -h \;
+}

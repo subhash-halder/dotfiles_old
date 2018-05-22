@@ -7,6 +7,10 @@ command_exists() {
 echo "Installing dotfiles."
 git submodule update --init --recursive
 
+# Tmux Plugin manager
+# prefix + I from tmux to install the other plugins
+git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/tmux/plugins/tpm
+
 sudo npm i -g eslint-cli
 
 if ! command_exists zsh; then
