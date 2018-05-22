@@ -1,0 +1,14 @@
+snippet propdef "React: Define prop type in react js"
+${1:ClassName}.propTypes = {
+	$2
+}
+endsnippet
+
+snippet defred "Reducer boiler plate"
+export default (state = {}, action = {}) => {
+	switch(action.type) {
+		$1
+		default: return state;
+	}
+}
+endsnippet

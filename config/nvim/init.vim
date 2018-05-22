@@ -56,7 +56,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 nmap <C-p> :FuzzyOpen<cr>
 nmap <C-s> :w<cr>
-imap <C-s> <C-o>:w<cr>
+nmap <C-q> :q<cr>
+imap <C-s> <Esc>:w<cr>
+
+autocmd FileType javascript nnoremap <buffer> <C-f> :Fixmyjs<CR>
 
 map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 
