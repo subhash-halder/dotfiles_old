@@ -1,0 +1,15 @@
+snippet exproute "Express router"
+const express = require('express');
+
+const ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`}= express.Router();
+
+$0
+
+module.exports = $1;
+endsnippet
+
+snippet exprm "Export Route method"
+${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`}.$2('$3', (req, res$4) => {
+	$0
+}
+endsnippet

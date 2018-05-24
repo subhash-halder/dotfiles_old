@@ -14,17 +14,26 @@ Plug 'cloudhead/neovim-fuzzy'
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'ruanyl/vim-fixmyjs'
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " Json file to show the quotes
 let g:vim_json_syntax_conceal = 0
+let g:prettier#config#tab_width = 4
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#exec_cmd_async = 1
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 " Reads when file changes
 set autoread 
 " Initialize plugin system

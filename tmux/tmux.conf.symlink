@@ -9,6 +9,8 @@ set -g default-terminal "xterm"
 
 set -sg escape-time 0
 
+set -g focus-events on
+
 # set-window-option -g mode-keys vi
 set -g mode-keys vi
 # pane movement shortcuts
@@ -27,6 +29,7 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 
 set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-yank'
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
