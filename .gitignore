@@ -8,6 +8,7 @@ config/nvim/plugged
 
 tmux/plugins
 tmux/resurrect
+config/nvim/undo
 
 
 .netrwhist

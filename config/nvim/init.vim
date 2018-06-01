@@ -44,6 +44,13 @@ let g:airline#extensions#tabline#enabled=1
 " Map leader to ,
 let mapleader = ','
 imap jj <ESC>
+" Persistent undo
+set undofile
+set undodir=~/.dotfiles/config/nvim/undo
+" wrapping of lint
+set wrap linebreak nolist
+set undolevels=1000
+set undoreload=10000
 " nmap <silent> <leader>k :Explore<cr>
 " NerdTree config
  let NERDTreeShowHidden=1
@@ -107,7 +114,7 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:airline_theme = "hybrid"
 let g:airline_powerline_fonts = 1
-let g:indentLine_char = '┆'
+let g:indentLine_char = '|'
 
 " Start autocompletion after 2 chars
 let g:ycm_min_num_of_chars_for_completion = 2

@@ -1,14 +1,65 @@
+snippet impprop "Import prop-types"
+import PropTypes from 'prop-types';
+endsnippet
+
+snippet propfn "prop-types function"
+PropTypes.func.isRequired,
+endsnippet
+snippet propbool "prop-types boolean"
+PropTypes.bool.isRequired,
+endsnippet
+snippet propstr "prop-types boolean"
+PropTypes.string.isRequired,
+endsnippet
+snippet propshape "prop-types symbol"
+PropTypes.shape({
+	$0
+}).isRequired,
+endsnippet
+
 snippet propdef "React: Define prop type in react js"
-${1:ClassName}.propTypes = {
-	$2
+${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`}.propTypes = {
+	$0
 }
 endsnippet
 
-snippet defred "Reducer boiler plate"
-export default (state = {}, action = {}) => {
+snippet reddef "Reducer boiler plate"
+const ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`} = (state = {}, action = {}) => {
 	switch(action.type) {
-		$1
+		$0
 		default: return state;
 	}
 }
+
+expor.default $1;
+endsnippet
+
+snippet reactfn "React as arrow function"
+import React from 'react';
+
+const ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`} = ($2) => (
+	<$3>
+		$0
+	</$3>
+)
+
+export default $1;
+endsnippet
+
+snippet reactclass "React as arrow function"
+import React from 'react';
+
+class ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`} extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			$0
+		)
+	}
+}
+
+export default $1;
 endsnippet

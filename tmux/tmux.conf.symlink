@@ -19,7 +19,7 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-source-file "${HOME}/.dotfiles/tmux/themes/tmux-themepack/powerline/block/blue.tmuxtheme"
+source-file "${HOME}/.dotfiles/tmux/themes/tmux-themepack/powerline/double/orange.tmuxtheme"
 set -g mouse on
 
 
