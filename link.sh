@@ -24,10 +24,9 @@ if [ ! -d "$HOME/.config" ]; then
 fi
 
 
-config_files=$( find -H "$DOTFILES/config" -maxdepth 1 2>/dev/null )
+config_files=$( find -H ~/.dotfiles/config -maxdepth 1 2>/dev/null )
 for config in $config_files; do
-    baseName=basename "$config"
-    target="$HOME/.config/$baseName"
+	target="$HOME/.config/$(basename "$config" )"
     if [ -e "$target" ]; then
         echo "~${target#$HOME} already exists... Skipping."
     else
