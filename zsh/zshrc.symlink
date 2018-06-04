@@ -97,6 +97,7 @@ alias zshconfig="nvim ~/.dotfiles/zsh/zshrc.symlink"
 alias tmuxconfig="nvim ~/.dotfiles/tmux/tmux.conf.symlink"
 alias nvimconfig="nvim ~/.dotfiles/config/nvim/init.vim"
 alias c="clear"
+alias vim="nvim"
 
 function tmx() {
     tmux new-session \; \

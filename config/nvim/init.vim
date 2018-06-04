@@ -14,11 +14,12 @@ Plug 'cloudhead/neovim-fuzzy'
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'ruanyl/vim-fixmyjs'
+Plug 'sbdchd/neoformat'
 "Plug 'honza/vim-snippets'
 Plug 'neomake/neomake'
 Plug 'jaawerth/neomake-local-eslint-first'
@@ -32,8 +33,13 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
 let g:prettier#config#trailing_comma = 'es5'
+let g:neoformat_enabled_javascript = ['prettier']
 let g:prettier#exec_cmd_async = 1
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 " Reads when file changes
 set autoread 
 " Initialize plugin system
