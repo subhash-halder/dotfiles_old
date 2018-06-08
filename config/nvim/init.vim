@@ -15,8 +15,8 @@ Plug 'cloudhead/neovim-fuzzy'
 Plug 'mattn/emmet-vim'
 " JavaScript plugins
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
