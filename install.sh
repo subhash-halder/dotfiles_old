@@ -14,6 +14,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/tmux/plugins/tpm
 sudo npm i -g eslint-cli
 sudo npm i -g prettier
 sudo npm i -g js-beautify
+sudo npm i -g tern
 
 if ! command_exists zsh; then
     echo "zsh not found. Please install and then re-run installation scripts"

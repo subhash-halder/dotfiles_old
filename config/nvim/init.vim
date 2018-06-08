@@ -11,12 +11,23 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'cloudhead/neovim-fuzzy'
+" HTML plugins
+Plug 'mattn/emmet-vim'
 " JavaScript plugins
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'carlitux/deoplete-ternjs'
 Plug 'SirVer/ultisnips'
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'sbdchd/neoformat'
@@ -40,6 +51,8 @@ augroup fmt
   autocmd BufWritePre * Neoformat
 augroup END
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+"let g:user_emmet_install_global = 0
+"autocmd FileType html,css EmmetInstall
 " Reads when file changes
 set autoread 
 " Initialize plugin system
@@ -50,6 +63,8 @@ let g:airline#extensions#tabline#enabled=1
 " Map leader to ,
 let mapleader = ','
 imap jj <ESC>
+set foldmethod=indent
+set foldlevelstart=99
 " Persistent undo
 set undofile
 set undodir=~/.dotfiles/config/nvim/undo
@@ -68,8 +83,11 @@ set undoreload=10000
  nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " make YCM compatible with UltiSnips 
-let g:ycm_key_list_select_completion = ['<C-n>']
-let g:ycm_key_list_previous_completion = ['<C-p>']
+"let g:ycm_key_list_select_completion = ['<C-n>']
+"let g:ycm_key_list_previous_completion = ['<C-p>']
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -152,6 +170,7 @@ set laststatus=2 " show the satus line all the time
 "let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 let g:neomake_javascript_enabled_makers = ['eslint']
+"let g:neomake_scss_enabled_makers = ['csslint']
 call neomake#configure#automake('nrwi', 500)
 " Tab control
 filetype plugin indent on

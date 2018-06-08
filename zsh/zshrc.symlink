@@ -106,3 +106,10 @@ function tmx() {
     select-pane -t 0 \; \
     split-window -h \;
 }
+
+
+
+if [ -f ~/.zsh_path ]; then
+    . ~/.zsh_path
+fi
+
