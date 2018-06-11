@@ -1,24 +1,30 @@
-snippet impprop "Import prop-types"
+snippet rimpprop "Import prop-types"
 import PropTypes from 'prop-types';
 endsnippet
 
-snippet propfn "prop-types function"
+snippet rpropfn "prop-types function"
 PropTypes.func.isRequired,
 endsnippet
-snippet propbool "prop-types boolean"
+snippet rpropbool "prop-types boolean"
 PropTypes.bool.isRequired,
 endsnippet
-snippet propstr "prop-types boolean"
+snippet rpropstr "prop-types boolean"
 PropTypes.string.isRequired,
 endsnippet
-snippet propshape "prop-types symbol"
+snippet rpropshape "prop-types symbol"
 PropTypes.shape({
 	$0
 }).isRequired,
 endsnippet
 
-snippet propdef "React: Define prop type in react js"
+snippet rpropdef "React: Define prop type in react js"
 ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`}.propTypes = {
+	$0
+}
+endsnippet
+
+snippet rcmd "Lifecycle component did mount"
+componentDidMount($1) {
 	$0
 }
 endsnippet

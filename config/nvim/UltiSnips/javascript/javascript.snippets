@@ -2,12 +2,32 @@ snippet imp "Import * from *"
 import $1 from '$2';
 endsnippet
 
+snippet cl "Console log"
+console.log($0);
+endsnippet
+
 snippet req " Node require"
 const $1 = require('$2');
 endsnippet
 
 snippet expd "export default *"
 export default $1
+endsnippet
+
+snippet promise "Promise class"
+new Promise((resolve, reject) => {
+	$0
+});
+endsnippet
+
+snippet afn "Arrow function"
+($1) => $0
+endsnippet
+
+snippet fn "Function"
+${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`} () {
+	$0
+}
 endsnippet
 
 snippet jutest "Unit test snippet"
@@ -20,8 +40,7 @@ const $1 = require('$2');
 const { expect } = chai;
 
 describe('$3', () => {
-    it('$4', (done) => {
-        done();
+    it('$4', () => {
     });
 });
 endsnippet
