@@ -6,9 +6,11 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'kristijanhusak/vim-hybrid-material'
 "Plug 'kadekillary/subtle_solo'
-Plug 'aradunovic/perun.vim'
+"Plug 'aradunovic/perun.vim'
+Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 Plug 'cloudhead/neovim-fuzzy'
 " HTML plugins
@@ -37,6 +39,9 @@ Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
 Plug 'tmux-plugins/vim-tmux-focus-events'
+
+set encoding=UTF-8
+"set guifont=Ubuntu_Mono_Nerd_Font_Complete:h11
 " Json file to show the quotes
 let g:vim_json_syntax_conceal = 0
 let g:prettier#config#tab_width = 4
@@ -57,7 +62,7 @@ augroup END
 set autoread 
 " Initialize plugin system
 call plug#end()
-let g:spacevim_enable_guicolors=0
+"let g:spacevim_enable_guicolors=0
 let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
@@ -151,7 +156,8 @@ let g:ycm_add_preview_to_completeopt = 0
 "set background=dark
 "colorscheme hybrid_material
 "colorscheme subtle_dark
-colorscheme perun
+"colorscheme perun
+colorscheme monokai_pro
 set termguicolors
 
 set cursorline       "hilight the line of the cursor

@@ -30,8 +30,16 @@ ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`} () {
 }
 endsnippet
 
+snippet class "Function"
+class ${1:`!p snip.rv = os.path.splitext(snip.fn)[0]`} {
+	constructor($2) {
+		$0
+	}
+}
+endsnippet
+
 snippet jutest "Unit test snippet"
-/* global  describe, it */
+/* global  describe, it, before, after */
 /* eslint-disable no-unused-expressions */
 // Require the dev-dependencies
 const chai = require('chai');
@@ -40,9 +48,22 @@ const $1 = require('$2');
 const { expect } = chai;
 
 describe('$3', () => {
-    it('$4', () => {
-    });
+	before(done => {
+		dbConection.open(done);
+	});
+    describe('$4', () => {
+		it('$5', () => {
+			$0
+		});
+	});
+	after(done => {
+		dbConection.close(done);
+	});
 });
+endsnippet
+
+snippet expecteql "expect eql"
+expect($1).to.eql($0);
 endsnippet
 
 snippet /* "JsDocs comments"
