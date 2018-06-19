@@ -99,6 +99,8 @@ alias nvimconfig="nvim ~/.dotfiles/config/nvim/init.vim"
 alias c="clear"
 alias vim="nvim"
 
+ulimit -n 2048
+
 function tmx() {
     tmux new-session \; \
     split-window -v \; \

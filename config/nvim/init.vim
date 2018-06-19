@@ -30,6 +30,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'carlitux/deoplete-ternjs'
+Plug 'wokalski/autocomplete-flow'
 Plug 'SirVer/ultisnips'
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'sbdchd/neoformat'
@@ -43,8 +44,9 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 set encoding=UTF-8
 "set guifont=Ubuntu_Mono_Nerd_Font_Complete:h11
 " Json file to show the quotes
+let g:javascript_plugin_flow = 1
 let g:vim_json_syntax_conceal = 0
-let g:prettier#config#tab_width = 4
+let g:prettier#config#tab_width = 2
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
@@ -181,9 +183,9 @@ call neomake#configure#automake('nrwi', 500)
 " Tab control
 filetype plugin indent on
 " show existing tab with 4 spaces width
-set tabstop=4
+set tabstop=2
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
 set clipboard=unnamed
