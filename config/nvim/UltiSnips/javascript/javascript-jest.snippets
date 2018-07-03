@@ -20,3 +20,23 @@ test('$1', () => {
 	$0
 });
 endsnippet
+
+snippet exp "expect"
+expect($1)$0;
+endsnippet
+
+snippet expse "expect strict equal"
+expect($1).toStrictEqual($0);
+endsnippet
+
+snippet expe "expect equal"
+expect($1).toEqual($0);
+endsnippet
+
+snippet expt "expect truthy"
+expect($1).toBeTruthy();
+endsnippet
+
+snippet expf "expect falsy"
+expect($0).toBeFalsy();
+endsnippet

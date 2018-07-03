@@ -29,9 +29,12 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'Shougo/echodoc'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'wokalski/autocomplete-flow'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'ruanyl/vim-fixmyjs'
 Plug 'sbdchd/neoformat'
 "Plug 'honza/vim-snippets'
@@ -40,6 +43,7 @@ Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
 Plug 'tmux-plugins/vim-tmux-focus-events'
+
 
 set encoding=UTF-8
 "set guifont=Ubuntu_Mono_Nerd_Font_Complete:h11
@@ -95,11 +99,38 @@ set undoreload=10000
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
+let g:echodoc#enable_at_startup = 1
+let g:neosnippet#enable_completed_snippet = 1
+" neosnippet disable runtime snippest
+"let g:neosnippet#disable_runtime_snippets = 1
+set noshowmode
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+" neo snippets end
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+" let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+" let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 nmap <C-p> :FuzzyOpen<cr>
 nmap <C-s> :w<cr>
@@ -148,12 +179,12 @@ let g:airline_powerline_fonts = 1
 let g:indentLine_char = '|'
 
 " Start autocompletion after 2 chars
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_enable_diagnostic_highlighting = 0
+"let g:ycm_min_num_of_chars_for_completion = 2
+"let g:ycm_min_num_identifier_candidate_chars = 2
+"let g:ycm_enable_diagnostic_highlighting = 0
 " Don't show YCM's preview window 
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview "Disable the preview window
+"let g:ycm_add_preview_to_completeopt = 0
 
 "set background=dark
 "colorscheme hybrid_material
@@ -163,9 +194,9 @@ colorscheme monokai_pro
 set termguicolors
 
 set cursorline       "hilight the line of the cursor
-set timeoutlen=1000 ttimeoutlen=0
+set timeoutlen=1000 
 set nowrap           "no line wrapping
-set laststatus=2 " show the satus line all the time
+" set laststatus=2 " show the satus line all the time
 
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -180,6 +211,7 @@ set laststatus=2 " show the satus line all the time
 let g:neomake_javascript_enabled_makers = ['eslint']
 "let g:neomake_scss_enabled_makers = ['csslint']
 call neomake#configure#automake('nrwi', 500)
+" let g:neomake_open_list = 3
 " Tab control
 filetype plugin indent on
 " show existing tab with 4 spaces width
