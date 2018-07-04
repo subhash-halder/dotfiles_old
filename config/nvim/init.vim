@@ -72,7 +72,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
-let mapleader = ','
+let mapleader = ' '
 imap jj <ESC>
 set foldmethod=indent
 set foldlevelstart=99
@@ -101,6 +101,7 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
 let g:echodoc#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#snippets_directory='~/.dotfiles/config/nvim/snippets'
 " neosnippet disable runtime snippest
 "let g:neosnippet#disable_runtime_snippets = 1
 set noshowmode

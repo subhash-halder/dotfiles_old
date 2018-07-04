@@ -1,0 +1,15 @@
+snippet exproute "Express router"
+options head
+  const express = require('express');
+
+  const ${1}= express.Router();
+
+  ${0}
+
+  module.exports = ${1};
+
+snippet exprm "Export Route method"
+options head
+  ${1}.${2}('${3}', (req, res${4}) => {
+    ${0}
+  }

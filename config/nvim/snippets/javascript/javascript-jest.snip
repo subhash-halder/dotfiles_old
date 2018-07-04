@@ -1,0 +1,65 @@
+
+snippet jesttemplate "jest template"
+options head
+  declare var describe;
+  declare var test;
+
+  describe('${1}', () => {
+    ${0}
+  });
+
+snippet jestDescribe "jest describe template"
+options head
+  describe('${1}', () => {
+    ${0}
+  });
+
+snippet jestTest "jest test template"
+options head
+  test('${1}', ${2:async} () => {
+    ${0}
+  });
+
+snippet     jestMock "jest Mock modules"
+options     head
+  jest.mock(${0});
+
+snippet exp "expect"
+options head
+  expect(${1})${0};
+
+snippet exptobe "expect to be"
+options head
+  expect(${1}).toBe(${0});
+
+snippet expse "expect strict equal"
+options head
+  expect(${1}).toStrictEqual(${0});
+
+snippet expe "expect equal"
+options head
+  expect(${1}).toEqual(${0});
+
+snippet expt "expect truthy"
+options head
+  expect(${0}).toBeTruthy();
+
+snippet expf "expect falsy"
+options head
+  expect(${0}).toBeFalsy();
+
+snippet expgt "expect greater than"
+options head
+  expect(${1}).toBeGreaterThan(${0});
+
+snippet expgte "expect greater than equal"
+options head
+  expect(${1}).toBeGreaterThanOrEqual(${0});
+
+snippet explt "expect less than"
+options head
+  expect(${1}).toBeLessThan(${0});
+
+snippet explte "expect less than equal"
+options head
+  expect(${1}).toBeLessThanOrEqual(${0});

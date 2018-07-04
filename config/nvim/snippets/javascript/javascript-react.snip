@@ -1,0 +1,81 @@
+snippet rimpprop "Import prop-types"
+options head
+  import PropTypes from 'prop-types';
+
+
+snippet rpropfn "prop-types function"
+options head
+  PropTypes.func.isRequired,
+
+snippet rpropbool "prop-types boolean"
+options head
+  PropTypes.bool.isRequired,
+
+snippet rpropstr "prop-types boolean"
+options head
+  PropTypes.string.isRequired,
+
+snippet rpropshape "prop-types symbol"
+options head
+  PropTypes.shape({
+    ${0}
+  }).isRequired,
+
+
+snippet rpropdef "React: Define prop type in react js"
+options head
+  ${1}.propTypes = {
+    ${0}
+  }
+
+
+snippet rcmd "Lifecycle component did mount"
+options head
+  componentDidMount(${1}) {
+    ${0}
+  }
+
+
+snippet reddef "Reducer boiler plate"
+options head
+  const ${1} = (state = {}, action = {}) => {
+    switch(action.type) {
+      ${0}
+      default: return state;
+    }
+  }
+
+  expor.default ${1};
+
+
+snippet reactfn "React as arrow function"
+options head
+  import React from 'react';
+
+  const ${1} = (${2}) => (
+    <${3}>
+      ${0}
+    </${3}>
+  )
+
+  export default ${1};
+
+
+snippet reactclass "React as arrow function"
+options head
+  import React from 'react';
+
+  class ${1} extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+
+    render() {
+      return (
+        ${0}
+      )
+    }
+  }
+
+  export default ${1};
+
