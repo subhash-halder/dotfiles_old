@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 Plug 'cloudhead/neovim-fuzzy'
+Plug 'airblade/vim-gitgutter'
 " HTML plugins
 Plug 'mattn/emmet-vim'
 " JavaScript plugins
@@ -31,7 +32,9 @@ else
 endif
 Plug 'Shougo/echodoc'
 Plug 'carlitux/deoplete-ternjs'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'wokalski/autocomplete-flow'
+" Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm i -g flow-bin' } 
 "Plug 'SirVer/ultisnips'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -102,6 +105,9 @@ let g:deoplete#file#enable_buffer_path = 1
 let g:echodoc#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/config/nvim/snippets'
+" Use tern_for_vim.
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
 " neosnippet disable runtime snippest
 "let g:neosnippet#disable_runtime_snippets = 1
 set noshowmode

@@ -3,63 +3,126 @@ snippet jesttemplate "jest template"
 options head
   declare var describe;
   declare var test;
+  declare var expect;
 
   describe('${1}', () => {
     ${0}
   });
-
 snippet jestDescribe "jest describe template"
 options head
   describe('${1}', () => {
     ${0}
   });
-
 snippet jestTest "jest test template"
 options head
   test('${1}', ${2:async} () => {
     ${0}
   });
-
+# all mock related snippets
 snippet     jestMock "jest Mock modules"
 options     head
   jest.mock(${0});
+snippet     mocknam "get the mock name of the function"
+options     word
+  getMockName();
+snippet     mock.calls "Get the mock calls array"
+options     head
+  mock.calls
+snippet     mock.results "Get the mock calls result array"
+options     head
+  mock.results
+snippet     mock.instances "Get the mock calls instances array"
+options     head
+  mock.instances
+snippet     mockclear "reset info in calls and instance array"
+options     head
+  mockClear();
+snippet     mockreset "reset all info in mock"
+options     head
+  mockReset();
+snippet     mockrestore "restore ori func if created with jest.spyOn"
+options     head
+  mockRestore();
+snippet     mockimp "assign mock implementation function"
+options     head
+  mockImplementation(${0});
+snippet     mockimponce "assign mock implementation function for one time"
+options     head
+  mockImplementationOnce(${0});
+snippet     mockname "assign mock function a name"
+options     head
+  mockName(${0});
+snippet     mockretthis "return the this instance of the function"
+options     head
+  mockReturnThis();
+snippet     mockretval "return the specific value"
+options     head
+  mockReturnValue(${0});
+snippet     mockretvalonce "return the specific value once"
+options     head
+  mockReturnValueOnce(${0});
+snippet     mockresvalonce "resolve to specific value once"
+options     head
+  mockResolvedValueOnce(${0});
+snippet     mockresval "resolve to specific value"
+options     head
+  mockResolvedValue(${0});
+snippet     mockrejval "rejected to specific value"
+options     head
+  mockRejectedValue(${0});
+snippet     mockrejvalonce "rejected to specific value once"
+options     head
+  mockRejectedValueOnce(${0});
 
+# all expect for jest
 snippet exp "expect"
 options head
   expect(${1})${0};
-
+snippet expnot "expect not"
+options head
+  expect(${0}).not;
+snippet expresolve "expect rosolves succesfully"
+options head
+  expect(${0}).resolves;
+snippet expreject "expect rejects succesfully"
+options head
+  expect(${0}).rejects;
 snippet exptobe "expect to be"
 options head
   expect(${1}).toBe(${0});
-
+snippet exptocall "expect to be called"
+options head
+  expect(${1}).toHaveBeenCalled();
+snippet exptocallwith "Expect to be called with";
+options head
+  expect(${1}).toHaveBeenCalledWith(${0});
+snippet exptocallnwith "Expect to be called nth time with";
+options head
+  expect(${1}).toHaveBeenNthCalledWith(${2}, ${0});
+snippet exptocalllatest "Expect to be called latest with";
+options head
+  expect(${1}).toHaveBeenLastCalledWith(${0});
 snippet expse "expect strict equal"
 options head
   expect(${1}).toStrictEqual(${0});
-
 snippet expe "expect equal"
 options head
   expect(${1}).toEqual(${0});
-
 snippet expt "expect truthy"
 options head
   expect(${0}).toBeTruthy();
-
 snippet expf "expect falsy"
 options head
   expect(${0}).toBeFalsy();
-
 snippet expgt "expect greater than"
 options head
   expect(${1}).toBeGreaterThan(${0});
-
 snippet expgte "expect greater than equal"
 options head
   expect(${1}).toBeGreaterThanOrEqual(${0});
-
 snippet explt "expect less than"
 options head
   expect(${1}).toBeLessThan(${0});
-
 snippet explte "expect less than equal"
 options head
   expect(${1}).toBeLessThanOrEqual(${0});
