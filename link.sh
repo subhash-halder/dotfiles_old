@@ -52,17 +52,14 @@ for themes in $zshThemeFiles; do
 done
 
 
-# create vim symlinks
-# As I have moved off of vim as my full time editor in favor of neovim,
-# I feel it doesn't make sense to leave my vimrc intact in the dotfiles repo
-# as it is not really being actively maintained. However, I would still
-# like to configure vim, so lets symlink ~/.vimrc and ~/.vim over to their
-# neovim equivalent.
 
 echo -e "\\n\\nCreating vim symlinks"
 echo "=============================="
 VIMFILES=( "$HOME/.vim:$DOTFILES/config/nvim"
         "$HOME/.vimrc:$DOTFILES/config/nvim/init.vim"
+        "$HOME/.config/Code/User/snippets:$DOTFILES/VSCode/User/snippets"
+        "$HOME/.config/Code/User/settings.json:$DOTFILES/VSCode/User/settings.json"
+        "$HOME/.config/Code/User/keybindings.json:$DOTFILES/VSCode/User/keybindings.json"
         "$HOME/.tmux:$DOTFILES/tmux" )
 
 for file in "${VIMFILES[@]}"; do

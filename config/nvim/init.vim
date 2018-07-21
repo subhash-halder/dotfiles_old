@@ -92,9 +92,15 @@ set undoreload=10000
  let NERDTreeMinimalUI=1
  let NEDTreeDirArrows=1
 " Toggle NERDTree
- nmap <silent> <leader>k :NERDTreeToggle<cr>
+ nmap <silent> <C-b> :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
  nmap <silent> <leader>y :NERDTreeFind<cr>
+
+ " Change split focus
+nmap <leader>h :wincmd h<cr>
+nmap <leader>j :wincmd j<cr>
+nmap <leader>k :wincmd k<cr>
+nmap <leader>l :wincmd l<cr>
 
 " make YCM compatible with UltiSnips 
 "let g:ycm_key_list_select_completion = ['<C-n>']
@@ -162,7 +168,7 @@ inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 " Using tab shortcut
 nnoremap <C-k> :bnext<CR>
 nnoremap <C-j> :bprevious<CR>
-nnoremap <C-x> :bdelete<CR>
+nnoremap <C-w> :bdelete<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
