@@ -4,10 +4,13 @@ call plug#begin('~/.config/nvim/plugged')
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'kristijanhusak/vim-hybrid-material'
 "Plug 'kadekillary/subtle_solo'
 "Plug 'aradunovic/perun.vim'
-Plug 'phanviet/vim-monokai-pro'
+"Plug 'morhetz/gruvbox'
+"Plug 'NLKNguyen/papercolor-theme'
+"Plug 'lifepillar/vim-solarized8'
+"Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -31,7 +34,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'Shougo/echodoc'
-Plug 'carlitux/deoplete-ternjs'
+"Plug 'carlitux/deoplete-ternjs'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'wokalski/autocomplete-flow'
 " Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm i -g flow-bin' } 
@@ -168,7 +171,7 @@ inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 " Using tab shortcut
 nnoremap <C-k> :bnext<CR>
 nnoremap <C-j> :bprevious<CR>
-nnoremap <C-w> :bdelete<CR>
+nnoremap <C-x> :bdelete<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -199,11 +202,16 @@ let g:indentLine_char = '|'
 set completeopt-=preview "Disable the preview window
 "let g:ycm_add_preview_to_completeopt = 0
 
-"set background=dark
-"colorscheme hybrid_material
+set background=dark
+colorscheme hybrid_material
 "colorscheme subtle_dark
 "colorscheme perun
-colorscheme monokai_pro
+"colorscheme gruvbox
+"colorscheme PaperColor
+"colorscheme monokai_pro
+"colorscheme solarized8
+"colorscheme pink-moon
+"colorscheme vimterial
 set termguicolors
 
 set cursorline       "hilight the line of the cursor
