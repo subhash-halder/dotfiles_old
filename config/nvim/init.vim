@@ -4,12 +4,12 @@ call plug#begin('~/.config/nvim/plugged')
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'kristijanhusak/vim-hybrid-material'
+"Plug 'kristijanhusak/vim-hybrid-material'
 "Plug 'kadekillary/subtle_solo'
 "Plug 'aradunovic/perun.vim'
 "Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
-"Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-solarized8'
 "Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -35,7 +35,7 @@ else
 endif
 Plug 'Shougo/echodoc'
 "Plug 'carlitux/deoplete-ternjs'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+"Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'wokalski/autocomplete-flow'
 " Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm i -g flow-bin' } 
 "Plug 'SirVer/ultisnips'
@@ -98,12 +98,18 @@ set undoreload=10000
  nmap <silent> <C-b> :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
  nmap <silent> <leader>y :NERDTreeFind<cr>
-
- " Change split focus
-nmap <leader>h :wincmd h<cr>
-nmap <leader>j :wincmd j<cr>
-nmap <leader>k :wincmd k<cr>
-nmap <leader>l :wincmd l<cr>
+if has('nvim')
+  "terminal
+  tnoremap <M-h> <c-\><c-n><c-w>h
+  noremap <M-j> <c-\><c-n><c-w>j
+  tnoremap <M-k> <c-\><c-n><c-w>k
+  tnoremap <M-l> <c-\><c-n><c-w>l
+   " Change split focus
+  nnoremap <M-h> <c-w>h
+  nnoremap <M-j> <c-w>j
+  nnoremap <M-k> <c-w>k
+  nnoremap <M-l> <c-w>l
+endif
 
 " make YCM compatible with UltiSnips 
 "let g:ycm_key_list_select_completion = ['<C-n>']
@@ -203,20 +209,19 @@ set completeopt-=preview "Disable the preview window
 "let g:ycm_add_preview_to_completeopt = 0
 
 set background=dark
-colorscheme hybrid_material
+"colorscheme hybrid_material
 "colorscheme subtle_dark
 "colorscheme perun
 "colorscheme gruvbox
 "colorscheme PaperColor
 "colorscheme monokai_pro
-"colorscheme solarized8
+colorscheme solarized8
 "colorscheme pink-moon
 "colorscheme vimterial
 set termguicolors
 
 set cursorline       "hilight the line of the cursor
 set timeoutlen=1000 
-set nowrap           "no line wrapping
 " set laststatus=2 " show the satus line all the time
 
 "set statusline+=%#warningmsg#

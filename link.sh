@@ -57,9 +57,6 @@ echo -e "\\n\\nCreating vim symlinks"
 echo "=============================="
 VIMFILES=( "$HOME/.vim:$DOTFILES/config/nvim"
         "$HOME/.vimrc:$DOTFILES/config/nvim/init.vim"
-        "$HOME/.config/Code/User/snippets:$DOTFILES/VSCode/User/snippets"
-        "$HOME/.config/Code/User/settings.json:$DOTFILES/VSCode/User/settings.json"
-        "$HOME/.config/Code/User/keybindings.json:$DOTFILES/VSCode/User/keybindings.json"
         "$HOME/.tmux:$DOTFILES/tmux" )
 
 for file in "${VIMFILES[@]}"; do
