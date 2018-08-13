@@ -101,9 +101,10 @@ set undoreload=10000
 if has('nvim')
   "terminal
   tnoremap <M-h> <c-\><c-n><c-w>h
-  noremap <M-j> <c-\><c-n><c-w>j
+  tnoremap <M-j> <c-\><c-n><c-w>j
   tnoremap <M-k> <c-\><c-n><c-w>k
   tnoremap <M-l> <c-\><c-n><c-w>l
+  tnoremap <C-[> <c-\><c-n>:bprevious<cr>
    " Change split focus
   nnoremap <M-h> <c-w>h
   nnoremap <M-j> <c-w>j
@@ -159,7 +160,6 @@ nmap <C-s> :w<cr>
 nmap <C-q> :q<cr>
 imap <C-s> <Esc>:w<cr>
 
-autocmd FileType javascript nnoremap <buffer> <C-f> :Fixmyjs<CR>
 
 map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 
@@ -175,8 +175,8 @@ inoremap <Up> <C-o>:echo "No Up for you!"<CR>
 inoremap <Down> <C-o>:echo "No Down for you!"<CR>
 
 " Using tab shortcut
-nnoremap <C-k> :bnext<CR>
-nnoremap <C-j> :bprevious<CR>
+nnoremap <leader>k :bnext<CR>
+nnoremap <leader>j :bprevious<CR>
 nnoremap <C-x> :bdelete<CR>
 
 let g:NERDTreeIndicatorMapCustom = {
