@@ -100,16 +100,16 @@ set undoreload=10000
  nmap <silent> <leader>y :NERDTreeFind<cr>
 if has('nvim')
   "terminal
-  tnoremap <M-h> <c-\><c-n><c-w>h
-  tnoremap <M-j> <c-\><c-n><c-w>j
-  tnoremap <M-k> <c-\><c-n><c-w>k
-  tnoremap <M-l> <c-\><c-n><c-w>l
+  tnoremap <C-h> <c-\><c-n><c-w>h
+  tnoremap <C-j> <c-\><c-n><c-w>j
+  tnoremap <C-k> <c-\><c-n><c-w>k
+  tnoremap <C-l> <c-\><c-n><c-w>l
   tnoremap <C-[> <c-\><c-n>:bprevious<cr>
    " Change split focus
-  nnoremap <M-h> <c-w>h
-  nnoremap <M-j> <c-w>j
-  nnoremap <M-k> <c-w>k
-  nnoremap <M-l> <c-w>l
+  nnoremap <C-h> <c-w>h
+  nnoremap <C-j> <c-w>j
+  nnoremap <C-k> <c-w>k
+  nnoremap <C-l> <c-w>l
 endif
 
 " make YCM compatible with UltiSnips 

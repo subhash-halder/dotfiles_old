@@ -26,6 +26,6 @@ fi
 
 source link.sh
 
-source fonts/fonts/install.sh
+# source fonts/fonts/install.sh
 
 echo "Done. Reload your terminal."
