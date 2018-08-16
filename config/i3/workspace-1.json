@@ -6,30 +6,22 @@
     "layout": "splith",
     "percent": null,
     "type": "con",
-    "nodes": [
-        {
-            "border": "normal",
-            "current_border_width": 2,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 434,
-               "width": 654,
-               "x": 0,
-               "y": 0
-            },
-            "name": "Terminal",
-            "percent": 1,
-            "swallows": [
-               {
-               // "class": "^Gnome\\-terminal$",
-               // "instance": "^gnome\\-terminal\\-server$",
-               // "title": "^Terminal$",
-               // "transient_for": "^$",
-               // "window_role": "^gnome\\-terminal\\-window\\-4e0f2548\\-35c9\\-4709\\-8dba\\-55708ad51d6e$"
-               }
-            ],
-            "type": "con"
-        }
-    ]
+    "nodes": [{
+        "border": "normal",
+        "current_border_width": 2,
+        "floating": "auto_off",
+        "geometry": {
+            "height": 434,
+            "width": 654,
+            "x": 0,
+            "y": 0
+        },
+        "name": "Terminal",
+        "percent": 1,
+        "swallows": [{
+            "class": "^Gnome-terminal$",
+            "title": "^Editor$"
+        }],
+        "type": "con"
+    }]
 }
-
