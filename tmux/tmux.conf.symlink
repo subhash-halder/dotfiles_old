@@ -8,11 +8,14 @@ set -g base-index 1
 # Use the xterm-256color terminal
 # set -g default-terminal "xterm-256color"
 set -g default-terminal "st-256color"
+# for cursor change in insert mode in nvim
+set -g -a terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
 # Apply Tc
+set -ga terminal-overrides ',xterm-256color:Tc'
 # set-option -ga terminal-overrides ",xterm-256color:Tc"
-set-option -ga terminal-overrides ",st-256color:Tc"
+# set-option -ga terminal-overrides ",st-256color:Tc"
 #set -g default-terminal "xterm-256color"
-#set -g default-terminal "screen-256color"
+# set -g default-terminal "screen-256color"
 #set -g default-terminal "rxvt-unicode-256color"
 set -sg escape-time 0
 
@@ -26,7 +29,7 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-source-file "${HOME}/.dotfiles/tmux/themes/tmux-themepack/powerline/double/orange.tmuxtheme"
+source-file "${HOME}/.dotfiles/tmux/themes/tmux-themepack/basic.tmuxtheme"
 set -g mouse on
 
 
@@ -35,8 +38,8 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 
 
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-yank'
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'

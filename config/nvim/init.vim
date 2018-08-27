@@ -221,7 +221,7 @@ colorscheme solarized8
 set termguicolors
 
 set cursorline       "hilight the line of the cursor
-set timeoutlen=1000 
+set timeoutlen=500 
 " set laststatus=2 " show the satus line all the time
 
 "set statusline+=%#warningmsg#
@@ -252,3 +252,5 @@ set clipboard=unnamed
 set number relativenumber
 set nonumber norelativenumber  " turn hybrid line numbers off
 set number! relativenumber!    " toggle hybrid line numbersk
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
