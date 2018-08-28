@@ -133,6 +133,6 @@ if [ -f ~/.zsh_path ]; then
 fi
 
 # automatic run tmux if install as using simple terminal which doesnot support scroll and copy
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+# if command -v tmux>/dev/null; then
+#   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+# fi
