@@ -30,7 +30,7 @@ font pango: monospace 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal -e tmux
+bindsym $mod+Return exec i3-sensible-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -176,12 +176,12 @@ assign [class="vlc"] $workspace10
 
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 exec --no-startup-id xcompmgr -n
-# exec --no-startup-id gnome-terminal --title="Editor" -e tmux 
+# exec --no-startup-id gnome-terminal --title="Editor"  
 # exec --no-startup-id google-chrome
 
 
 for_window [title="dropdown"] floating enable
-# for_window [title="dropdown"] resize set 625 400
+for_window [title="dropdown"] resize set 625 400
 for_window [title="dropdown"] move scratchpad
 for_window [title="dropdown"] border pixel 3
-exec --no-startup-id i3-sensible-terminal -t dropdown -e tmux
+exec --no-startup-id i3-sensible-terminal -t dropdown 
