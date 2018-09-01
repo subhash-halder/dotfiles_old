@@ -1179,7 +1179,7 @@ c.backend = 'webengine'
 ## Valid values:
 ##   - top
 ##   - bottom
-c.statusbar.position = 'top'
+# c.statusbar.position = 'top'
 
 ## List of widgets displayed in the statusbar.
 ## Type: List of String
@@ -1297,7 +1297,7 @@ c.statusbar.position = 'top'
 ##   - bottom
 ##   - left
 ##   - right
-c.tabs.position = 'left'
+# c.tabs.position = 'top'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
@@ -1355,7 +1355,7 @@ c.tabs.position = 'left'
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
 ## Type: PercOrInt
-c.tabs.width = '5%'
+c.tabs.width = '20%'
 
 ## Wrap when changing tabs.
 ## Type: Bool
@@ -1487,7 +1487,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https:/
 # config.bind('<Ctrl-W>', 'tab-close')
 # config.bind('<Ctrl-X>', 'navigate decrement')
 # config.bind('<Ctrl-^>', 'tab-focus last')
-# config.bind('<Ctrl-h>', 'home')
+config.bind('H', 'home')
 # config.bind('<Ctrl-p>', 'tab-pin')
 # config.bind('<Ctrl-s>', 'stop')
 # config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
@@ -1503,10 +1503,10 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https:/
 # config.bind('D', 'tab-close -o')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
-# config.bind('H', 'back')
-# config.bind('J', 'tab-next')
-# config.bind('K', 'tab-prev')
-# config.bind('L', 'forward')
+config.bind('<Ctrl-j>', 'back')
+config.bind('<Ctrl-l>', 'tab-next')
+config.bind('<Ctrl-h>', 'tab-prev')
+config.bind('<Ctrl-k>', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
 # config.bind('O', 'set-cmd-text -s :open -t')
@@ -1659,8 +1659,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https:/
 # config.bind('<Escape>', 'leave-mode', mode='command')
 # config.bind('<Return>', 'command-accept', mode='command')
 # config.bind('<Shift-Delete>', 'completion-item-del', mode='command')
-# config.bind('<Shift-Tab>', 'completion-item-focus prev', mode='command')
-# config.bind('<Tab>', 'completion-item-focus next', mode='command')
+config.bind('<Ctrl-p>', 'completion-item-focus prev', mode='command')
+config.bind('<Ctrl-n>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'completion-item-focus --history prev', mode='command')
 
 ## Bindings for hint mode
@@ -1699,8 +1699,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https:/
 # config.bind('<Down>', 'prompt-item-focus next', mode='prompt')
 # config.bind('<Escape>', 'leave-mode', mode='prompt')
 # config.bind('<Return>', 'prompt-accept', mode='prompt')
-# config.bind('<Shift-Tab>', 'prompt-item-focus prev', mode='prompt')
-# config.bind('<Tab>', 'prompt-item-focus next', mode='prompt')
+config.bind('<Ctrl-p>', 'prompt-item-focus prev', mode='prompt')
+config.bind('<Ctrl-n>', 'prompt-item-focus next', mode='prompt')
 # config.bind('<Up>', 'prompt-item-focus prev', mode='prompt')
 
 ## Bindings for register mode
