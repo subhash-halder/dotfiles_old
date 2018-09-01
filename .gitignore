@@ -6,6 +6,9 @@
 #plugin directory for nvim
 config/nvim/plugged
 
+config/qutebrowser/bookmarks
+config/qutebrowser/quickmarks
+
 tmux/plugins
 tmux/resurrect
 config/nvim/undo
