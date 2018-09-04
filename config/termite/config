@@ -1,11 +1,12 @@
 [options]
 font = Hack Nerd Font 9
+font = Menlo 9
 
 [colors]
 foreground = #839496
 foreground_bold = #eee8d5
 # background = #002b36
-background = rgba(0, 43, 54, 0.8)
+background = rgba(0, 43, 54, 0.9)
 
 cursor = #93a1a1
 

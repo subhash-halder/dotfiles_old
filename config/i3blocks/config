@@ -107,7 +107,7 @@ min_width=CPU: 100%
 #label=BAT
 #label=
 #instance=1
-interval=30
+interval=3
 
 # Date Time
 #
