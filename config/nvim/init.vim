@@ -10,6 +10,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
 Plug 'lifepillar/vim-solarized8'
+"Plug 'dracula/vim'
 "Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -104,7 +105,7 @@ if has('nvim')
   tnoremap <C-j> <c-\><c-n><c-w>j
   tnoremap <C-k> <c-\><c-n><c-w>k
   tnoremap <C-l> <c-\><c-n><c-w>l
-  tnoremap <C-[> <c-\><c-n>:bprevious<cr>
+  tnoremap <C-[> <c-\><c-n><cr>
    " Change split focus
   nnoremap <C-h> <c-w>h
   nnoremap <C-j> <c-w>j
@@ -216,6 +217,7 @@ set background=dark
 "colorscheme PaperColor
 "colorscheme monokai_pro
 colorscheme solarized8
+" colorscheme dracula
 "colorscheme pink-moon
 "colorscheme vimterial
 set termguicolors
