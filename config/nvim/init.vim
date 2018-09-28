@@ -9,8 +9,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'aradunovic/perun.vim'
 "Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
-Plug 'lifepillar/vim-solarized8'
-"Plug 'dracula/vim'
+"Plug 'lifepillar/vim-solarized8'
+Plug 'dracula/vim'
 "Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -34,6 +34,10 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'jiangmiao/auto-pairs'
+Plug 'tomtom/tcomment_vim'
+
+
 Plug 'Shougo/echodoc'
 "Plug 'carlitux/deoplete-ternjs'
 "Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -216,8 +220,8 @@ set background=dark
 "colorscheme gruvbox
 "colorscheme PaperColor
 "colorscheme monokai_pro
-colorscheme solarized8
-" colorscheme dracula
+" colorscheme solarized8
+colorscheme dracula
 "colorscheme pink-moon
 "colorscheme vimterial
 set termguicolors
@@ -249,6 +253,7 @@ set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
 set clipboard=unnamed
+set colorcolumn=80
 
 "Setting relative line numbering
 set number relativenumber
