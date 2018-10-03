@@ -3,6 +3,19 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+import dracula.draw
+
+dracula.draw.blood(c, {
+    'spacing': {
+        'vertical': 6,
+        'horizontal': 8
+    },
+    'font': {
+        'family': 'sans',
+        'size': 10
+    }
+})
+
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
 config.load_autoconfig()
