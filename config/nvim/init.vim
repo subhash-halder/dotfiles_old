@@ -84,7 +84,7 @@ let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#formatter='unique_tail'
 " Map leader to ,
 let mapleader = ' '
-imap jj <ESC>
+" imap jj <ESC>
 set foldmethod=indent
 set foldlevelstart=99
 " Persistent undo
