@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'kristijanhusak/vim-hybrid-material'
 "Plug 'kadekillary/subtle_solo'
@@ -35,7 +36,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'jiangmiao/auto-pairs'
-Plug 'tomtom/tcomment_vim'
 
 
 Plug 'Shougo/echodoc'
@@ -53,6 +53,7 @@ Plug 'neomake/neomake'
 Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
+Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 
@@ -100,7 +101,7 @@ set undoreload=10000
  let NERDTreeMinimalUI=1
  let NEDTreeDirArrows=1
 " Toggle NERDTree
- nmap <silent> <C-b> :NERDTreeToggle<cr>
+ nmap <silent> <leader>b :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
  nmap <silent> <leader>y :NERDTreeFind<cr>
 if has('nvim')
