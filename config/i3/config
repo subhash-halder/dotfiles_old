@@ -41,6 +41,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+u			[title="dropdown"] scratchpad show; [title="dropdown"] move position center
 bindsym $mod+u			[title="dropdown"] scratchpad show; [title="dropdown"] move position center
 # change focus
 bindsym $mod+h focus left
@@ -162,7 +163,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+x exec --no-startup-id lockscreen && sudo systemctl suspend
-bindsym $mod+Shift+x exec echo "No\nYes" | dmenu -p "ShutDown"
+bindsym $mod+Shift+x exec dmenu_prompt "ShutDown" "sudo poweroff"
 # Dracula
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
@@ -218,7 +219,7 @@ exec --no-startup-id xcompmgr -n
 for_window [class="^.*"] border pixel 2
 
 for_window [title="dropdown"] floating enable
-for_window [title="dropdown"] resize set 625 400
+for_window [title="dropdown"] resize set 1000 700
 for_window [title="dropdown"] move scratchpad
 for_window [title="dropdown"] border pixel 3
 exec --no-startup-id i3-sensible-terminal -t dropdown 

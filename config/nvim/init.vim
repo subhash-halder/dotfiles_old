@@ -5,19 +5,23 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'christoomey/vim-tmux-navigator'
 "Plug 'kristijanhusak/vim-hybrid-material'
 "Plug 'kadekillary/subtle_solo'
 "Plug 'aradunovic/perun.vim'
 "Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'lifepillar/vim-solarized8'
-Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
+"Plug 'dracula/vim'
+Plug 'itchyny/lightline.vim'
 "Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 Plug 'cloudhead/neovim-fuzzy'
+"Plug 'junegunn/fzf'
 Plug 'airblade/vim-gitgutter'
 " HTML plugins
 Plug 'mattn/emmet-vim'
@@ -28,13 +32,14 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+"
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+
 Plug 'jiangmiao/auto-pairs'
 
 
@@ -55,9 +60,24 @@ Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'tpope/vim-fugitive' " the ultimate git helper
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+" Initialize plugin system
+call plug#end()
 
+
+" let g:LanguageClient_serverCommands = {
+"     \ 'javascript': ['flow-language-server', '--stdio'],
+"     \ 'javascript.jsx': ['flow-language-server', '--stdio'],
+"     \ 'cpp': ['/usr/bin/clangd'],
+"     \ }
+" 
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" " Or map each action separately
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 set encoding=UTF-8
+set mouse=a
 "set guifont=Ubuntu_Mono_Nerd_Font_Complete:h11
 " Json file to show the quotes
 let g:javascript_plugin_flow = 1
@@ -76,10 +96,9 @@ augroup END
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 "let g:user_emmet_install_global = 0
 "autocmd FileType html,css EmmetInstall
+set scrolloff=10
 " Reads when file changes
 set autoread 
-" Initialize plugin system
-call plug#end()
 "let g:spacevim_enable_guicolors=0
 let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#formatter='unique_tail'
@@ -213,7 +232,7 @@ let g:indentLine_char = '|'
 " Don't show YCM's preview window 
 set completeopt-=preview "Disable the preview window
 "let g:ycm_add_preview_to_completeopt = 0
-
+let g:airline_theme='onedark'
 set background=dark
 "colorscheme hybrid_material
 "colorscheme subtle_dark
@@ -222,7 +241,8 @@ set background=dark
 "colorscheme PaperColor
 "colorscheme monokai_pro
 " colorscheme solarized8
-colorscheme dracula
+" colorscheme dracula
+colorscheme onedark
 "colorscheme pink-moon
 "colorscheme vimterial
 set termguicolors
@@ -253,7 +273,7 @@ set tabstop=2
 set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
-set clipboard=unnamed
+set clipboard=unnamedplus
 set colorcolumn=80
 
 "Setting relative line numbering

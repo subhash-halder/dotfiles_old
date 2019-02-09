@@ -36,7 +36,7 @@ font = MesloLGS Nerd Font 9
 foreground      = #f8f8f2
 foreground_bold = #f8f8f2
 cursor          = #f8f8f2
-background = rgba(40, 42, 54, 0.9)
+background = rgba(40, 42, 54, 0.98)
 # background      = #282a36
 
 # black
