@@ -184,6 +184,7 @@ nmap <C-p> :FuzzyOpen<cr>
 nmap <C-s> :w<cr>
 nmap <C-q> :q<cr>
 imap <C-s> <Esc>:w<cr>
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 
 map <leader>ev :e! ~/.config/nvim/init.vim<cr>
