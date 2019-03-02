@@ -20,8 +20,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
-Plug 'cloudhead/neovim-fuzzy'
+"Plug 'cloudhead/neovim-fuzzy'
 "Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 " HTML plugins
 Plug 'mattn/emmet-vim'
@@ -33,10 +34,10 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
@@ -64,16 +65,16 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
 
-" let g:LanguageClient_serverCommands = {
-"     \ 'javascript': ['flow-language-server', '--stdio'],
-"     \ 'javascript.jsx': ['flow-language-server', '--stdio'],
-"     \ 'cpp': ['/usr/bin/clangd'],
-"     \ }
-" 
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['flow-language-server', '--stdio'],
+    \ 'javascript.jsx': ['flow-language-server', '--stdio'],
+    \ 'cpp': ['/usr/bin/clangd'],
+    \ }
+ 
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " " Or map each action separately
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 set encoding=UTF-8
@@ -120,7 +121,7 @@ set undoreload=10000
  let NERDTreeMinimalUI=1
  let NEDTreeDirArrows=1
 " Toggle NERDTree
- nmap <silent> <leader>b :NERDTreeToggle<cr>
+ nmap <silent> <leader>o :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
  nmap <silent> <leader>y :NERDTreeFind<cr>
 if has('nvim')
@@ -147,8 +148,8 @@ let g:echodoc#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/config/nvim/snippets'
 " Use tern_for_vim.
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+"let g:tern#command = ["tern"]
+"let g:tern#arguments = ["--persistent"]
 " neosnippet disable runtime snippest
 "let g:neosnippet#disable_runtime_snippets = 1
 set noshowmode
@@ -180,7 +181,33 @@ endif
 " let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 " let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
-nmap <C-p> :FuzzyOpen<cr>
+fun! FZFFileFiender()
+  let is_git = system('git status')
+  if v:shell_error
+    :Files
+  else
+    :GitFiles
+  endif
+endfun
+
+let s:toggleAllSplitsStatus=0
+fun! ToggleAllSplits()
+  if s:toggleAllSplitsStatus
+    let s:toggleAllSplitsStatus=0
+    :exe "normal \<C-w>=\<cr>"
+  else
+    let s:toggleAllSplitsStatus=1
+    :exe "normal \<C-w>_\<cr>"
+    :exe "normal \<C-w>|\<cr>"
+  endif
+endfun
+
+
+nmap <C-p> :call FZFFileFiender()<cr>
+nmap <leader>b :Buffer<cr>
+nmap <leader>n :lnext<cr>
+nmap <leader>p :lprevious<cr>
+nmap <leader>v :call ToggleAllSplits()<cr>
 nmap <C-s> :w<cr>
 nmap <C-q> :q<cr>
 imap <C-s> <Esc>:w<cr>
