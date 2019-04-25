@@ -8,7 +8,7 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-gaps inner 10
+gaps inner 5
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -223,3 +223,4 @@ for_window [title="dropdown"] resize set 1000 700
 for_window [title="dropdown"] move scratchpad
 for_window [title="dropdown"] border pixel 3
 exec --no-startup-id i3-sensible-terminal -t dropdown 
+exec --no-startup-id xss-lock -- /home/subhash/.dotfiles/scripts/lockscreen

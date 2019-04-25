@@ -78,7 +78,7 @@ interval=30
 #separator=false
 
 [wifi]
-instance=wlp2s0
+instance=wlp5s0
 interval=10
 label=
 #separator=false

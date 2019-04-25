@@ -12,8 +12,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'morhetz/gruvbox'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'lifepillar/vim-solarized8'
-Plug 'joshdick/onedark.vim'
-"Plug 'dracula/vim'
+"Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim'
 Plug 'itchyny/lightline.vim'
 "Plug 'phanviet/vim-monokai-pro'
 Plug 'vim-airline/vim-airline'
@@ -269,8 +269,8 @@ set background=dark
 "colorscheme PaperColor
 "colorscheme monokai_pro
 " colorscheme solarized8
-" colorscheme dracula
-colorscheme onedark
+colorscheme dracula
+"colorscheme onedark
 "colorscheme pink-moon
 "colorscheme vimterial
 set termguicolors
